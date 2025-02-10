@@ -40,47 +40,4 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCP7CeCN4ePS-Jl9ehQZq219S_WRUYff1w',
-    appId: '1:622054155627:web:267b51a25e06d8370f182e',
-    messagingSenderId: '622054155627',
-    projectId: 'ninja-brew-crew-62cc9',
-    authDomain: 'ninja-brew-crew-62cc9.firebaseapp.com',
-    storageBucket: 'ninja-brew-crew-62cc9.firebasestorage.app',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBD1eJkDRgfrKSlPBbqdIHpD1xDlRG429Y',
-    appId: '1:622054155627:android:654dd454684c818c0f182e',
-    messagingSenderId: '622054155627',
-    projectId: 'ninja-brew-crew-62cc9',
-    storageBucket: 'ninja-brew-crew-62cc9.firebasestorage.app',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC7rxmKki9vjyTleVWhJ9M3PpAVQV47bvA',
-    appId: '1:622054155627:ios:bc15dff65e90465b0f182e',
-    messagingSenderId: '622054155627',
-    projectId: 'ninja-brew-crew-62cc9',
-    storageBucket: 'ninja-brew-crew-62cc9.firebasestorage.app',
-    iosBundleId: 'com.example.kendrick',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC7rxmKki9vjyTleVWhJ9M3PpAVQV47bvA',
-    appId: '1:622054155627:ios:bc15dff65e90465b0f182e',
-    messagingSenderId: '622054155627',
-    projectId: 'ninja-brew-crew-62cc9',
-    storageBucket: 'ninja-brew-crew-62cc9.firebasestorage.app',
-    iosBundleId: 'com.example.kendrick',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCP7CeCN4ePS-Jl9ehQZq219S_WRUYff1w',
-    appId: '1:622054155627:web:651faa7629e6cc450f182e',
-    messagingSenderId: '622054155627',
-    projectId: 'ninja-brew-crew-62cc9',
-    authDomain: 'ninja-brew-crew-62cc9.firebaseapp.com',
-    storageBucket: 'ninja-brew-crew-62cc9.firebasestorage.app',
-  );
-}
+  
