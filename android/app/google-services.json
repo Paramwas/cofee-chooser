@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "622054155627",
+    "project_id": "ninja-brew-crew-62cc9",
+    "storage_bucket": "ninja-brew-crew-62cc9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622054155627:android:654dd454684c818c0f182e",
+        "android_client_info": {
+          "package_name": "com.example.kendrick"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD1eJkDRgfrKSlPBbqdIHpD1xDlRG429Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622054155627:android:19f7baa7c8e694860f182e",
+        "android_client_info": {
+          "package_name": "com.example.last"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD1eJkDRgfrKSlPBbqdIHpD1xDlRG429Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622054155627:android:1b2de9a0af28f9fb0f182e",
+        "android_client_info": {
+          "package_name": "com.paramwas.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD1eJkDRgfrKSlPBbqdIHpD1xDlRG429Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

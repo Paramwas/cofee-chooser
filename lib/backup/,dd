@@ -1,0 +1,167 @@
+Form(
+          key: formkey,
+          child: Column(
+            children: [
+              Text(
+                'Update your coffee',
+                style: TextStyle(fontSize: 18.0),
+              ),
+              SizedBox(height: 20.0),
+
+              // Name input
+              TextFormField(
+                decoration: textInputDeco.copyWith(hintText: 'Name'),
+                initialValue: _currentName,
+                validator: (val) => val!.isEmpty ? 'Please enter name' : null,
+                onChanged: (val) {
+                  setState(() {
+                    _currentName = val;
+                  });
+                },
+              ),
+
+              SizedBox(height: 20.0),
+
+              // Dropdown to select sugar level
+              DropdownButtonFormField(
+                value: _currentSugars, // Ensure value is set
+                onChanged: (value) {
+                  setState(() {
+                    _currentSugars = value.toString();
+                  });
+                },
+                items: sugars.map((sugar) {
+                  return DropdownMenuItem(
+                    value: sugar,
+                    child: Text('$sugar sugars'),
+                  );
+                }).toList(),
+              ),
+
+              SizedBox(height: 20.0),
+
+              // Strength slider
+              Slider(
+                activeColor: Colors.brown[_currentStrength],
+                inactiveColor: Colors.brown[_currentStrength],
+                min: 100.0,
+                max: 900.0,
+                divisions: 8,
+                value: _currentStrength!.toDouble(), // Ensure it's not null
+                onChanged: (value) {
+                  setState(() {
+                    _currentStrength = value.round();
+                  });
+                },
+              ),
+
+              SizedBox(height: 20.0),
+
+              // Submit button
+              ElevatedButton(
+                onPressed: () async {
+                  print(_currentName);
+                  print(_currentSugars);
+                  print(_currentStrength);
+                },
+                child: Text(
+                  'Update',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
+          ),
+        );
+
+
+
+data: (uid) {
+        if (uid == null) {
+          return Center(child: Text("User not logged in"));
+        }
+
+        return StreamBuilder(
+          stream: DatabaseService(uid: uid).userdata,
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) {
+              return Center(child: CircularProgressIndicator());
+            }
+
+            var userData = snapshot.data!;
+
+            return Form(
+              key: formkey,
+              child: Column(
+                children: [
+                  Text(
+                    'Update your coffee',
+                    style: TextStyle(fontSize: 18.0),
+                  ),
+                  SizedBox(height: 20.0),
+
+                  // Name input
+                  TextFormField(
+                    decoration: textInputDeco.copyWith(hintText: 'Name'),
+                    initialValue: userData.name, // Load from database
+                    validator: (val) =>
+                        val!.isEmpty ? 'Please enter name' : null,
+                    onChanged: (val) {
+                      setState(() {
+                        _currentName = val;
+                      });
+                    },
+                  ),
+
+                  SizedBox(height: 20.0),
+
+                  // Dropdown to select sugar level
+                  DropdownButtonFormField(
+                    value: userData.sugars, // Load from database
+                    onChanged: (value) {
+                      setState(() {
+                        _currentSugars = value.toString();
+                      });
+                    },
+                    items: sugars.map((sugar) {
+                      return DropdownMenuItem(
+                        value: sugar,
+                        child: Text('$sugar sugars'),
+                      );
+                    }).toList(),
+                  ),
+
+                  SizedBox(height: 20.0),
+
+                  // Strength slider
+                  Slider(
+                    activeColor: Colors
+                        .brown[int.parse(userData.strength).clamp(100, 900)],
+                    inactiveColor: Colors
+                        .brown[int.parse(userData.strength).clamp(100, 900)],
+                    min: 100.0,
+                    max: 900.0,
+                    divisions: 8,
+                    value: double.parse(userData.strength),
+                    onChanged: (value) {
+                      setState(() {
+                        _currentStrength = value.round();
+                      });
+                    },
+                  ),
+
+                  SizedBox(height: 20.0),
+
+                  // Submit button
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Update',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
